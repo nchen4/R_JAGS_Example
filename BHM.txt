@@ -1,0 +1,15 @@
+
+    model
+    {
+        for (i in 1:numGroups)
+        {
+            y[i] ~ dbin(p[i],n[i]);
+            logit(p[i]) <- eta[i];
+            eta[i] ~ dnorm(mu, tau1)
+        }
+
+    #Priors
+    mu ~ dnorm(mu0, tau2)
+    tau1 ~ dgamma(alpha, beta)
+
+    }
