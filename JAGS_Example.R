@@ -72,8 +72,6 @@ apply(mPostData, MARGIN = 2, FUN = function(x){quantile(x, c(0.05, 0.95))})
 #################################################################################################### .
 
 library(R2jags)
-
-
 jags.parallel(data = lData, model.file = "BHM.txt", n.chains = 2, n.iter = 11000, n.burnin = 1000, n.thin = 1,
               parameters.to.save = c("p" , "mu"))
 
