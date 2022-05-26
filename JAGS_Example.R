@@ -8,7 +8,6 @@ library(rjags)
 
 ModelBHM <- function()
 {
-
     modelString <-
     "model
     {
@@ -35,7 +34,6 @@ dPriorPrecision<- 1e-8
 dAlpha         <- 1.0
 dBeta          <- 1.0
 nGroups        <- length(nResponse)
-
 
 lData<-list(y = nResponse, n = nTotal, mu0 = dPriorCenter, tau2 = dPriorPrecision, alpha = dAlpha, beta = dBeta, numGroups = nGroups)
 
